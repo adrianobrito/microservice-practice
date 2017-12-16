@@ -26,5 +26,6 @@ repositories {
 dependencies {
 	compileOnly('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.flywaydb:flyway-core:5.0.2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
