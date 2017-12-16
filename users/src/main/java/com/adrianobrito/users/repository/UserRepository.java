@@ -1,7 +1,6 @@
 package com.adrianobrito.users.repository;
 
-import org.springframework.stereotype.Repository;
+import com.adrianobrito.users.domain.User;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public class UserRepository {
-}
+public interface UserRepository extends CrudRepository<User, Integer> {}
