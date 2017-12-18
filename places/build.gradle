@@ -22,10 +22,21 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	springCloudVersion = 'Edgware.RELEASE'
+}
 
 dependencies {
 	compileOnly('org.projectlombok:lombok')
-	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.flywaydb:flyway-core:5.0.2')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
